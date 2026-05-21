@@ -1,0 +1,35 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build/cache folders
+.cache/
+dist/
+build/
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# Environment/private files
+.env
+.env.*
+wp-config.php
+
+# WordPress generated/cache folders
+cache/
+backup/
+backups/
+uploads/

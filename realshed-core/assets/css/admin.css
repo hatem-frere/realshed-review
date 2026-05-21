@@ -1,0 +1,663 @@
+/* Ensure the dropdown is physically visible and on top */
+/* #realshed-shortcode-dropdown {
+    display: none;
+    position: fixed !important;
+    z-index: 999999 !important;
+    background: #ffffff !important;
+    border: 1px solid #c3c4c7 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+    width: 250px !important;
+    min-height: 50px !important;
+    border-radius: 4px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+} */
+/* Update this block to allow the menu to "stick" to the button */
+#realshed-shortcode-dropdown {
+    display: none;
+    position: absolute !important; /* This is the fix for the scroll drift */
+    top: 100% !important;        /* Anchors it to the bottom of the button */
+    left: 0 !important;
+    z-index: 999999 !important;
+    background: #ffffff !important;
+    border: 1px solid #c3c4c7 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+    width: 250px !important;
+    min-height: 50px !important;
+    border-radius: 4px !important;
+    padding: 0 !important;
+    margin: 5px 0 0 0 !important;
+}
+
+/* Header of the dropdown */
+.realshed-dropdown-header {
+    padding: 12px !important;
+    background: #2271b1 !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    border-radius: 4px 4px 0 0 !important;
+}
+
+/* List Items */
+.realshed-dropdown-content {
+    padding: 10px !important;
+}
+
+.realshed-insert-shortcode {
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px !important;
+    background: #f6f7f7 !important;
+    border: 1px solid #dcdcde !important;
+    color: #2271b1 !important;
+    text-decoration: none !important;
+    border-radius: 3px !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.realshed-insert-shortcode:hover {
+    background: #ffffff !important;
+    border-color: #2271b1 !important;
+    color: #135e96 !important;
+}
+
+.realshed-insert-shortcode .dashicons {
+    margin-right: 8px !important;
+}
+
+/* ==========================================================================
+   Realshed Core Admin Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Redux Setup Wizard tab visibility
+   -------------------------------------------------------------------------- */
+
+.redux-sidebar .redux-group-menu li a[href*="setup_wizard"],
+.redux-sidebar .redux-group-menu li.active a[href*="setup_wizard"] {
+	background: #2271b1 !important;
+	color: #fff !important;
+	font-weight: 700 !important;
+}
+
+.redux-sidebar .redux-group-menu li a[href*="setup_wizard"]:hover,
+.redux-sidebar .redux-group-menu li a[href*="setup_wizard"]:focus {
+	background: #135e96 !important;
+	color: #fff !important;
+}
+
+/* --------------------------------------------------------------------------
+   Setup Wizard container
+   -------------------------------------------------------------------------- */
+
+.realshed-redux-setup-wizard {
+	max-width: 1100px;
+}
+
+.realshed-setup-hero {
+	background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+	color: #fff;
+	padding: 24px 28px;
+	border-radius: 12px;
+	margin: 0 0 22px;
+	box-shadow: 0 12px 30px rgba(34, 113, 177, 0.18);
+}
+
+.realshed-setup-hero h2 {
+	color: #fff;
+	margin: 0 0 8px;
+	font-size: 23px;
+	line-height: 1.35;
+	font-weight: 700;
+}
+
+.realshed-setup-hero p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.92);
+}
+
+.realshed-setup-notice {
+	display: block;
+	margin: 0 0 18px;
+}
+
+.realshed-setup-error-list {
+	list-style: disc;
+	margin-left: 22px;
+}
+
+/* --------------------------------------------------------------------------
+   Stylish Required Pages table
+   -------------------------------------------------------------------------- */
+
+.realshed-setup-table-wrap {
+	max-width: 1060px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+	margin-top: 18px;
+}
+
+.realshed-pages-table {
+	border: 0;
+	border-collapse: separate;
+	border-spacing: 0;
+	margin: 0;
+	box-shadow: none;
+}
+
+.realshed-pages-table thead th {
+	background: #f6f7f7;
+	color: #1d2327;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	padding: 15px 18px !important;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.realshed-pages-table tbody td {
+	padding: 15px 18px !important;
+	vertical-align: middle;
+	border-bottom: 1px solid #edf0f2;
+	font-size: 14px;
+	color: #2c3338;
+}
+
+.realshed-pages-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.realshed-pages-table tbody tr {
+	transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.realshed-pages-table tbody tr:hover {
+	background: #f8fbff;
+}
+
+.realshed-pages-table code {
+	background: #f0f6fc;
+	color: #135e96;
+	border: 1px solid #c5d9ed;
+	border-radius: 6px;
+	padding: 4px 8px;
+	font-size: 13px;
+}
+
+.realshed-page-title {
+	font-weight: 700;
+	color: #1d2327;
+}
+
+.realshed-status-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 72px;
+	padding: 5px 10px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1.4;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+}
+
+.realshed-status-badge--exists {
+	background: #edfaef;
+	color: #008a20;
+	border: 1px solid #b8e6c1;
+}
+
+.realshed-status-badge--missing {
+	background: #fcf0f1;
+	color: #b32d2e;
+	border: 1px solid #f0c3c8;
+}
+
+.realshed-table-actions {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+}
+
+.realshed-table-actions a {
+	text-decoration: none;
+}
+
+.realshed-table-actions a:hover,
+.realshed-table-actions a:focus {
+	text-decoration: underline;
+}
+
+.realshed-table-empty {
+	color: #8c8f94;
+	font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Setup form
+   -------------------------------------------------------------------------- */
+
+.realshed-setup-form {
+	margin-top: 22px;
+}
+
+.realshed-setup-form .submit {
+	padding: 0;
+	margin: 0;
+}
+
+.realshed-setup-form .button-primary {
+	min-height: 40px;
+	padding: 4px 18px;
+	font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Forced Permalinks modal
+   -------------------------------------------------------------------------- */
+
+.realshed-setup-modal-overlay {
+	position: fixed;
+	z-index: 999999;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.72);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+}
+
+.realshed-setup-modal {
+	width: 100%;
+	max-width: 720px;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+	overflow: hidden;
+}
+
+.realshed-setup-modal__header {
+	background: #2271b1;
+	color: #fff;
+	padding: 22px 28px;
+}
+
+.realshed-setup-modal__header h2 {
+	color: #fff;
+	margin: 0;
+	font-size: 22px;
+	line-height: 1.35;
+}
+
+.realshed-setup-modal__body {
+	padding: 26px 28px;
+}
+
+.realshed-setup-modal__body p {
+	font-size: 15px;
+	line-height: 1.7;
+}
+
+.realshed-setup-modal__body ol {
+	margin-left: 22px;
+	font-size: 15px;
+	line-height: 1.7;
+}
+
+.realshed-setup-modal__footer {
+	padding: 20px 28px 28px;
+	background: #f6f7f7;
+	border-top: 1px solid #dcdcde;
+	text-align: right;
+}
+
+.realshed-setup-modal__footer .button {
+	font-size: 15px;
+	min-height: 40px;
+	padding: 5px 18px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive admin polish
+   -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 782px) {
+	.realshed-setup-hero {
+		padding: 20px;
+	}
+
+	.realshed-setup-table-wrap {
+		overflow-x: auto;
+	}
+
+	.realshed-pages-table {
+		min-width: 760px;
+	}
+
+	.realshed-setup-modal {
+		max-width: 94vw;
+	}
+
+	.realshed-setup-modal__header,
+	.realshed-setup-modal__body,
+	.realshed-setup-modal__footer {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+/* ==========================================================================
+   Realshed Core Admin Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Redux Setup Wizard tab visibility
+   -------------------------------------------------------------------------- */
+
+.redux-sidebar .redux-group-menu li a[href*="setup_wizard"],
+.redux-sidebar .redux-group-menu li.active a[href*="setup_wizard"] {
+	background: #2271b1 !important;
+	color: #fff !important;
+	font-weight: 700 !important;
+}
+
+.redux-sidebar .redux-group-menu li a[href*="setup_wizard"]:hover,
+.redux-sidebar .redux-group-menu li a[href*="setup_wizard"]:focus {
+	background: #135e96 !important;
+	color: #fff !important;
+}
+
+/* --------------------------------------------------------------------------
+   Setup Wizard container
+   -------------------------------------------------------------------------- */
+
+.realshed-redux-setup-wizard {
+	max-width: 1100px;
+}
+
+.realshed-setup-hero {
+	background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+	color: #fff;
+	padding: 24px 28px;
+	border-radius: 12px;
+	margin: 0 0 22px;
+	box-shadow: 0 12px 30px rgba(34, 113, 177, 0.18);
+}
+
+.realshed-setup-hero h2 {
+	color: #fff;
+	margin: 0 0 8px;
+	font-size: 23px;
+	line-height: 1.35;
+	font-weight: 700;
+}
+
+.realshed-setup-hero p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.92);
+}
+
+.realshed-setup-notice {
+	display: block;
+	margin: 0 0 18px;
+}
+
+.realshed-setup-error-list {
+	list-style: disc;
+	margin-left: 22px;
+}
+
+/* --------------------------------------------------------------------------
+   Stylish Required Pages table
+   -------------------------------------------------------------------------- */
+
+.realshed-setup-table-wrap {
+	max-width: 1060px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+	margin-top: 18px;
+}
+
+.realshed-pages-table {
+	border: 0;
+	border-collapse: separate;
+	border-spacing: 0;
+	margin: 0;
+	box-shadow: none;
+}
+
+.realshed-pages-table thead th {
+	background: #f6f7f7;
+	color: #1d2327;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	padding: 15px 18px;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.realshed-pages-table tbody td {
+	padding: 16px 18px;
+	vertical-align: middle;
+	border-bottom: 1px solid #edf0f2;
+	font-size: 14px;
+	color: #2c3338;
+}
+
+.realshed-pages-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.realshed-pages-table tbody tr {
+	transition: background 0.18s ease;
+}
+
+.realshed-pages-table tbody tr:hover {
+	background: #f8fbff;
+}
+
+.realshed-pages-table code {
+	background: #f0f6fc;
+	color: #135e96;
+	border: 1px solid #c5d9ed;
+	border-radius: 6px;
+	padding: 4px 8px;
+	font-size: 13px;
+}
+
+.realshed-page-title {
+	font-weight: 700;
+	color: #1d2327;
+}
+
+.realshed-status-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 72px;
+	padding: 5px 10px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1.4;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+}
+
+.realshed-status-badge--exists {
+	background: #edfaef;
+	color: #008a20;
+	border: 1px solid #b8e6c1;
+}
+
+.realshed-status-badge--missing {
+	background: #fcf0f1;
+	color: #b32d2e;
+	border: 1px solid #f0c3c8;
+}
+
+.realshed-table-actions {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+}
+
+.realshed-table-actions a {
+	text-decoration: none;
+}
+
+.realshed-table-actions a:hover,
+.realshed-table-actions a:focus {
+	text-decoration: underline;
+}
+
+.realshed-table-empty {
+	color: #8c8f94;
+	font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Setup form
+   -------------------------------------------------------------------------- */
+
+.realshed-setup-form {
+	margin-top: 22px;
+}
+
+.realshed-setup-form .submit {
+	padding: 0;
+	margin: 0;
+}
+
+.realshed-setup-form .button-primary {
+	min-height: 40px;
+	padding: 4px 18px;
+	font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Search shortcode preview
+   -------------------------------------------------------------------------- */
+
+.realshed-shortcode-preview {
+	display: inline-block;
+	font-size: 18px;
+	color: #2ecc71;
+	background: #f4f4f4;
+	padding: 6px 12px;
+	border-radius: 6px;
+	border: 1px solid #ddd;
+	font-family: Consolas, Monaco, monospace;
+	line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Forced Permalinks modal
+   -------------------------------------------------------------------------- */
+
+.realshed-setup-modal-overlay {
+	position: fixed;
+	z-index: 999999;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.72);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+}
+
+.realshed-setup-modal {
+	width: 100%;
+	max-width: 720px;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+	overflow: hidden;
+}
+
+.realshed-setup-modal__header {
+	background: #2271b1;
+	color: #fff;
+	padding: 22px 28px;
+}
+
+.realshed-setup-modal__header h2 {
+	color: #fff;
+	margin: 0;
+	font-size: 22px;
+	line-height: 1.35;
+}
+
+.realshed-setup-modal__body {
+	padding: 26px 28px;
+}
+
+.realshed-setup-modal__body p {
+	font-size: 15px;
+	line-height: 1.7;
+}
+
+.realshed-setup-modal__body ol {
+	margin-left: 22px;
+	font-size: 15px;
+	line-height: 1.7;
+}
+
+.realshed-setup-modal__footer {
+	padding: 20px 28px 28px;
+	background: #f6f7f7;
+	border-top: 1px solid #dcdcde;
+	text-align: right;
+}
+
+.realshed-setup-modal__footer .button {
+	font-size: 15px;
+	min-height: 40px;
+	padding: 5px 18px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive admin polish
+   -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 782px) {
+	.realshed-setup-hero {
+		padding: 20px;
+	}
+
+	.realshed-setup-table-wrap {
+		overflow-x: auto;
+	}
+
+	.realshed-pages-table {
+		min-width: 760px;
+	}
+
+	.realshed-setup-modal {
+		max-width: 94vw;
+	}
+
+	.realshed-setup-modal__header,
+	.realshed-setup-modal__body,
+	.realshed-setup-modal__footer {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
