@@ -33,3 +33,6 @@ cache/
 backup/
 backups/
 uploads/
+
+# Local personal backups - do not upload to GitHub
+_local-backups/
